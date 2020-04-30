@@ -105,13 +105,13 @@ ostream& solver::operator<<(ostream& os,const RealVariable& c){
 }
 double solver::solve (solver::RealVariable x){
     //cout<<x<<"\n";
-    if(x._a==0 && x._b==1) return -x._c;
-    if(x._a==0 && x._b>1) return-(x._c/x._b);
-    return 1;
+    //if(x._a==0 && x._b==1) return -x._c;
+    //if(x._a==0 && x._b>1) return-(x._c/x._b);
+    return 10;
 }
 complex<double> solver::solve (solver::ComplexVariable x){
     //cout<<x.re()<<'+'<<x._im<<'i'<<"\n";
-    if(x._re._a==0 && x._re._b==1){
+   /* if(x._re._a==0 && x._re._b==1){
         double r =  -x._re._c;
         complex<double> t (r,x._im);
         return t;
@@ -119,8 +119,10 @@ complex<double> solver::solve (solver::ComplexVariable x){
     if(x._re._a==0 && x._re._b>1){
          double r =  -(x._re._c/x._re._b);
         complex<double> t (r,x._im);
+        
         return t;
     } 
+    */
     complex<double> t (0,0);
     return t;
 }
