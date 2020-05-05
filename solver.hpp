@@ -34,7 +34,7 @@ public:
     
 };
 
- RealVariable operator*(const double& n, RealVariable& x);
+ RealVariable operator*(const double& n, RealVariable x);
  RealVariable operator+(const double& i, const RealVariable& x);
  ostream& operator<<(ostream& os,const RealVariable& c);
 
@@ -67,7 +67,7 @@ public:
     const ComplexVariable operator==(const ComplexVariable&) const;
     const ComplexVariable operator+(const complex<double>& x) const;
 };
-ComplexVariable operator*(const double& x,ComplexVariable& t);
+ComplexVariable operator*(const double& x,ComplexVariable t);
 ComplexVariable operator+(const double& x,const ComplexVariable& t);
 ostream& operator<<(std::ostream& os,const std::complex<double>& c);
 double solve (solver::RealVariable x);
