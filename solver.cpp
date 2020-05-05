@@ -59,8 +59,18 @@ solver::RealVariable solver::operator*(const double& n,  solver::RealVariable x)
      return ComplexVariable(x,_im);
  }
  const ComplexVariable solver::ComplexVariable::operator^(const double& n) const{
-     RealVariable x(_re._a+1,0,_re._c);
-     return ComplexVariable(x,_im);
+     if(n==0) {
+        RealVariable x(0,0,1);
+        return ComplexVariable(x,_im);
+     }
+     if(n==1){ 
+        RealVariable x(_re._a,_re._b,_re._c);
+        return ComplexVariable(x,_im);
+     }
+     else {
+        RealVariable x(_re._a+1,0,_re._c);
+        return ComplexVariable(x,_im);
+     }
  }
  const ComplexVariable ComplexVariable::operator==(const double& n) const{
      RealVariable x(_re._a,_re._b,_re._c-n);
