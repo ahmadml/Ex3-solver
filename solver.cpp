@@ -124,7 +124,8 @@ complex<double> solver::solve (solver::ComplexVariable x){
     double r = (x._re._b*x._re._b)+(-4*x._re._a*x._re._c);
     if(r < 0){
         double v = sqrt(-r);
-        complex<double> t (0,x._im+v);
+        double i = v/2*x._re._a;
+        complex<double> t (0,x._im+i);
         return t;
     }
     else{
